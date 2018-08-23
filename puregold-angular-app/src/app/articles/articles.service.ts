@@ -145,7 +145,7 @@ export class ArticlesService {
      * Refresh list of article
      */
     private refreshList(article: ArticlesI) {
-        this.articleList.push({...article});
+        this.articleList.unshift({...article});
     }
 
     /**

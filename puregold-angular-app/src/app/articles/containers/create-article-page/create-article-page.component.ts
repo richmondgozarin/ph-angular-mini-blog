@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticlesI } from '../../articles.interface';
+import { Events } from 'ionic-angular';
 import { UtilService } from '../../../shared/service/util.service';
 import { ArticlesService } from '../../articles.service';
+import { ArticlesI } from '../../articles.interface';
+import { AppPublishEvents } from '../../../app.enum';
 
 @Component({
   selector: 'app-create-article-page',
@@ -23,7 +25,8 @@ export class CreateArticlePageComponent implements OnInit {
 
   constructor(
     private utilService: UtilService,
-    private articlesService: ArticlesService
+    private articlesService: ArticlesService,
+    private events: Events
   ) { }
 
   ngOnInit() {
@@ -43,6 +46,7 @@ export class CreateArticlePageComponent implements OnInit {
     console.log('[onSaveArticle]:', this.article);
     
     this.articlesService.insertArticleApi(this.article).subscribe(() => {
+      this.events.publish(AppPublishEvents.APP_RELOAD_ARTICLES);
       this.utilService.popPage();
     });
 
