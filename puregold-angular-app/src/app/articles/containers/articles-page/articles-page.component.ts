@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Events, LoadingController } from 'ionic-angular';
+import { Events } from 'ionic-angular';
 import { EditArticlePageComponent } from '../edit-article-page/edit-article-page.component';
 import { CreateArticlePageComponent } from '../create-article-page/create-article-page.component';
 import { ArticlesService } from '../../articles.service';
@@ -17,7 +17,6 @@ export class ArticlesPageComponent implements OnInit {
   constructor(
     private utilService: UtilService,
     private articlesService: ArticlesService,
-    private loadingCtrl: LoadingController,
     private events: Events
   ) { 
     this.events.subscribe(AppPublishEvents.APP_RELOAD_ARTICLES, () => {
@@ -36,7 +35,6 @@ export class ArticlesPageComponent implements OnInit {
   }
 
   onViewArticle(_article){
-    console.log('[onViewArticle]: ', event);
     this.utilService.openPage(EditArticlePageComponent, true, {article: _article});
   }
 

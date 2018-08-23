@@ -2,7 +2,7 @@
 
 ion-content {
     &.articles-page {
-        margin-top: 5.6%;
-        max-height: 94%;
+        margin-top: calc(8.3vh - 2.6vh);
+        max-height: calc(104.3vh - 10vh);
     }
 }
