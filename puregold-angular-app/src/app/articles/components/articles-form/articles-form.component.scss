@@ -1,0 +1,118 @@
+@import '../../../../assets/styles/app-theme-variables';
+
+ion-header {
+    ion-toolbar {
+        .cross {
+            transform: rotate(-45deg); 
+        }
+
+        .leftToolbarButton {
+            padding-left: 10px;
+        }
+        
+        .rightToolbarButton {
+            padding-right: 10px;
+        }
+    }
+}
+
+ion-content {
+    &.article-content {
+        @include background-content($color-white-2);
+
+        .article-form {
+            padding-top: 24px;
+            background-color: $color-white-2 !important;
+
+            * {
+                background-color: $color-white-2 !important;
+            }
+
+            ion-row {
+                padding: 20px 20px;
+
+                ion-label {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+
+                ion-item {
+                    margin: 0;
+                    padding: 0;
+
+                    ::ng-deep .item-inner {
+                        padding-right: 0;
+                    }
+        
+                    ::ng-deep .label {
+                        margin: 0;
+                    }
+                }
+            }
+
+            ion-item-divider {
+                margin: 0;
+                padding: 0;
+                height: 0;
+                min-height: 20px;
+            }
+
+            .form-label {
+                @include form-label;
+            }
+
+            .input-regular {
+                @include form-input;
+            }
+
+            .form-input {
+                ::ng-deep .mat-input-underline {
+                    @include input-underline-solid;
+                }
+            }
+
+
+            .text-field {
+                display: block;
+            }
+
+            .textarea-field {
+                @include form-input;
+
+                width: 100%;
+                
+                textarea {
+                    height: 155px;
+                }
+            }
+
+            
+        }
+
+    }
+}
+
+ion-footer {
+    &.article-footer-toolbar {
+        padding-top: 0;
+        padding-bottom: 0;
+        ion-toolbar {
+            ::ng-deep .toolbar-content {
+                justify-content: center;
+                display: flex;
+            }
+        }
+
+        button {
+            font-size: 16px;
+            height: 60px;
+            color: $color-white;
+            background-color: $color-green !important;
+    
+            &.delete-button {
+                background-color: $color-red !important;
+    
+            }
+        }
+    }
+}

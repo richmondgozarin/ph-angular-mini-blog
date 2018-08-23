@@ -1,3 +1,12 @@
-<p>
-  articles-list-item works!
-</p>
+<ion-row class="article-list-item-row" col-12>
+  <button 
+    (tap)="onItemTapped()"
+    class="row-button"
+    ion-item detail-none>
+    <h2 class="title">{{article.title}}</h2>
+    <p class="content">{{article.body}}</p>
+    <ion-note item-end *ngIf="article.lastUpdateDate">
+      <ion-badge class="cmp-lead-indicator">{{article.lastUpdateDate}}</ion-badge>
+    </ion-note>
+  </button>
+</ion-row>

@@ -1,0 +1,8 @@
+@import '../../../../assets/styles/app-theme-variables';
+
+ion-content {
+    &.articles-page {
+        margin-top: 5.6%;
+        max-height: 94%;
+    }
+}
