@@ -1,0 +1,35 @@
+// *************************************
+//
+// FONTS
+//
+// *************************************
+
+// externalized the font-path into variables to allow extension
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url($app-theme-font-path + "/Roboto-Light.ttf") format("truetype");
+    src: url($app-theme-font-path + "/Roboto-Light.woff") format("woff");
+}
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url($app-theme-font-path + "/Roboto-Regular.ttf") format("truetype");
+    src: url($app-theme-font-path + "/Roboto-Regular.woff") format("woff");
+}
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url($app-theme-font-path + "/Roboto-Medium.ttf") format("truetype");
+    src: url($app-theme-font-path + "/Roboto-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url($app-theme-font-path + "/Roboto-Bold.ttf") format("truetype");
+    src: url($app-theme-font-path + "/Roboto-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: 'PlayfairDisplay-Italic';
+    src: url($app-theme-font-path + "/PlayfairDisplay-Italic.ttf") format("truetype");
+    src: url($app-theme-font-path + "/PlayfairDisplay-Italic.woff") format("woff");
+}

@@ -1,0 +1,107 @@
+$app-theme-font-path: "./fonts";
+
+$color-black: black;
+$color-white: white;
+$color-white-2: #fafafa;
+
+$color-font: #34384B;
+$color-navy: #424559;
+$color-dark-navy: #141521;
+$color-border: #E0E0E0;
+$color-red: #FD817B;
+$color-green: #00A758;
+$color-emerald-green: #00a758;
+$color-light-green:#00C46E;
+$border: $color-border solid 1px;
+$tabbar-height: 50px;
+$statusbar-height: 20px;
+$header-navbar-height: 50px;
+$page-padding-left: 20px;
+$page-padding-right: 20px;
+$margin: 20px;
+
+@mixin font-light {
+    font-family: 'Roboto-Light' !important;
+    font-weight: 300;
+    color: $color-font;
+}
+@mixin font-regular {
+    font-family: 'Roboto-Regular' !important;
+    font-weight: 300;
+    color: $color-font;
+}
+
+@mixin font-medium {
+    font-family: 'Roboto-Medium' !important;
+    color: $color-font;
+}
+
+@mixin font-bold {
+    font-family: 'Roboto-Bold' !important;
+    color: $color-font;
+}
+
+@mixin font-italic {
+    font-family: 'PlayfairDisplay-Italic' !important;
+    color: $color-font;
+}
+
+@mixin font-dark {
+    font-family: 'Roboto-Black';
+    color: $color-font;
+}
+
+@mixin transition() {
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+@mixin input-underline-solid() {
+    border-bottom-width: thin;
+    border-bottom: solid 1px lightgray;
+    background-color: white;
+}
+
+@mixin form-label($font-size: 12px, $line-height: 20px, $opacity: .5) {
+    @include font-light;
+    font-size: $font-size;
+    line-height: $line-height;
+    opacity: $opacity !important;
+}
+
+@mixin page-padding($padding-left: $page-padding-left, $padding-right: $page-padding-right) {
+    padding-left: $padding-left;
+    padding-right: $padding-right;
+}
+
+@mixin background-content($color) {
+    background-color: $color;
+
+    * {
+        background-color: $color;
+    }
+}
+
+@mixin input-font-size {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+@mixin form-input($margin-top: 0) {
+    @include font-regular;
+    @include input-font-size;
+    margin-top: $margin-top;
+}
+
+@mixin heading1($font-size: 18px, $line-height: 26px) {
+    @include font-regular;
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+@mixin primary-button {
+    display: inline-block;
+    height: 60px;
+    background-color: $color-emerald-green !important;
+}
+
