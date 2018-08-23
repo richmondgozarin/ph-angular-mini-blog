@@ -1,20 +1,52 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { IonicApp, IonicModule, IonicPageModule, IonicErrorHandler } from 'ionic-angular';
 
-
-import { AppComponent } from './app.component';
+import { SharedService } from './shared/service/shared.service';
 import { ArticlesModule } from './articles/articles.module';
+import { HomeModule } from './home/home.module';
+import { AppComponent } from './app.component';
+import { UtilService } from './shared/service/util.service';
+import { AppHttpInterceptor } from './shared/interceptor/app-http.interceptor';
 
+export const COMPONENTS = [
+  AppComponent
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    COMPONENTS
   ],
+  entryComponents: [COMPONENTS],
   imports: [
-    BrowserModule,
-    ArticlesModule
+    BrowserAnimationsModule,
+    IonicModule.forRoot(
+      AppComponent,
+      {
+        mode: 'ios', // enforce the theme to ios design regardless of running platform
+        modalEnter: 'modal-ios-slide-in',
+        modalLeave: 'modal-ios-slide-out',
+        pageTransition: 'ios-transition'
+      }
+    ),
+    IonicPageModule,
+    ArticlesModule,
+    HomeModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    SharedService,
+    UtilService,
+    { 
+      provide: ErrorHandler, 
+      useClass: IonicErrorHandler
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AppHttpInterceptor,
+      multi: true
+	  },
+  ],
+  bootstrap: [IonicApp]
 })
 export class AppModule { }
