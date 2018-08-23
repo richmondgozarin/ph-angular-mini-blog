@@ -4,6 +4,7 @@ import { UtilService } from '../../../shared/service/util.service';
 import { ArticlesService } from '../../articles.service';
 import { ArticlesI } from '../../articles.interface';
 import { AppPublishEvents } from '../../../app.enum';
+import { Store } from '@ngxs/store';
 
 @Component({
   selector: 'app-create-article-page',
@@ -26,7 +27,8 @@ export class CreateArticlePageComponent implements OnInit {
   constructor(
     private utilService: UtilService,
     private articlesService: ArticlesService,
-    private events: Events
+    private events: Events,
+    private store: Store
   ) { }
 
   ngOnInit() {
@@ -51,7 +53,7 @@ export class CreateArticlePageComponent implements OnInit {
     });
 
     // this.store
-		// 	.dispatch(new activitiesActions.SaveActivity(this.activity))
+		// 	.dispatch(new articleActions.SaveArticle(this.article))
 		// 	.subscribe(() => {
 		// 		this.utilService.popPage();
 		// 	});

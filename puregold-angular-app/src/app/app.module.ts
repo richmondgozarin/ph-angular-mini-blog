@@ -9,6 +9,7 @@ import { HomeModule } from './home/home.module';
 import { AppComponent } from './app.component';
 import { UtilService } from './shared/service/util.service';
 import { AppHttpInterceptor } from './shared/interceptor/app-http.interceptor';
+import { NgxsModule } from '@ngxs/store';
 
 export const COMPONENTS = [
   AppComponent
@@ -30,6 +31,7 @@ export const COMPONENTS = [
         pageTransition: 'ios-transition'
       }
     ),
+    NgxsModule.forRoot([]),
     IonicPageModule,
     ArticlesModule,
     HomeModule

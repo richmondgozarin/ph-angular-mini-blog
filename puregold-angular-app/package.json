@@ -26,13 +26,14 @@
     "@ionic-native/core": "^4.7.0",
     "@ionic-native/splash-screen": "^4.7.0",
     "@ionic-native/status-bar": "^4.7.0",
+    "@ngxs/store": "^2.0.0",
     "core-js": "^2.4.1",
     "ionic-angular": "^3.9.2",
     "ionic2-super-tabs": "^4.2.2",
     "ionicons": "^4.1.2",
     "json-server": "^0.14.0",
     "moment": "^2.22.2",
-    "rxjs": "^5.5.6",
+    "rxjs": "^5.5.11",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {

@@ -49,12 +49,16 @@ export class EditArticlePageComponent implements OnInit {
     });
 
     // this.store
-		// 	.dispatch(new activitiesActions.SaveActivity(this.activity))
+		// 	.dispatch(new articleActions.SaveArticle(this.article))
 		// 	.subscribe(() => {
 		// 		this.utilService.popPage();
 		// 	});
   }
 
+  /**
+   * Delete Article data
+   * @param articleFormData 
+   */
   onDeleteArticle(articleFormData: any) {
 
     // Assign the rest of articleFormData object properties to article object
