@@ -8,7 +8,9 @@ Both the CLI and generated project have dependencies that require Node 8.9 or hi
 
 ## Installation 
 
-`npm install -g @angular/cli`
+1. `npm install -g @angular/cli`
+
+2. `npm install` for dependencies defined in package.json
 
 ## Development server
 
